@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+
+.serviceBox{
+ border: 1px solid #4e4e4e;
+ text-align: center;
+ padding: 40px 0;
+ overflow: hidden;
+ position: relative;
+ z-index: 1;
+ transition: all 0.5s ease 0s;
+ background: black;
+ cursor: pointer;
+}
+.serviceBox:before,
+.serviceBox:after{
+ content: "";
+ width: 200%;
+ height: 200%;
+ background: #0000;
+ position: absolute;
+ top: 160px;
+ left: 0;
+ z-index: -1;
+ transform: rotate(-18deg);
+ transition: all 0.5s ease 0s;
+}
+.serviceBox:before{
+ background: #4e4e4e;
+ left: -120%;
+ transform: rotate(24deg);
+}
+.serviceBox:hover:before{
+ transform: rotate(16deg);
+}
+.serviceBox:hover:after{
+ background: #684f8e;
+ transform: rotate(-10deg);
+}
+.serviceBox .service-icon{
+ font-size: 60px;
+ color: #684f8e;
+ line-height: 50px;
+ margin-bottom: 0px;
+}
+.serviceBox .service-content{
+ color: #fff;
+ line-height: 25px;
+ padding: 0 20px 20px;
+}
+
+.serviceBox .description{
+ font-size: 14px;
+}
+.serviceBox .description span{
+  width: 90px;
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 13px;
+  position: relative;
+}
+.serviceBox .description .temp{
+  visibility: hidden;
+}
+.serviceBox .description strong{
+ font-family: TTRussoSans-Bold;
+ font-size: 40px;
+}
+.serviceBox .description strong .ruble{
+ font-family: TTRussoSans-Bold;
+ font-weight: normal;
+ font-size: 32px;
+ font-style: normal;
+}
+.serviceBox .read{
+ display: block;
+ width: 100%;
+ background: #fff;
+ font-size: 15px;
+ font-weight: 600;
+ color: #eba133;
+ padding: 10px;
+ border-left: 1px solid #eba133;
+ border-right: 1px solid #eba133;
+}
+.serviceBox:hover .read{
+ border-color: #684f8e;
+ color: #684f8e;
+}
+@media only screen and (max-width: 990px){
+ .serviceBox{ margin-bottom: 30px; }
+}
+@media only screen and (max-width: 767px){
+ .serviceBox:before,
+ .serviceBox:after{
+ top: 80px;
+ }
+}
+@media only screen and (max-width: 480px){
+ .serviceBox:before,
+ .serviceBox:after{
+ top: 140px;
+ }
+}
+</style>
+<h2 align="center">Предлагаемые клиенту тарифы</h2><br>
+<script>
+    function takename0(){
+    var temp=document.getElementsByClassName("title")[0].title;
+    document.getElementsByName('offer')[0].value=temp;
+    }
+    function takename1(){
+    var temp=document.getElementsByClassName("title")[1].title;
+    document.getElementsByName('offer')[0].value=temp;
+    }
+    function takename2(){
+    var temp=document.getElementsByClassName("title")[2].title;
+    document.getElementsByName('offer')[0].value=temp;
+    }
+    function takename3(){
+    var temp=document.getElementsByClassName("title")[3].title;
+    document.getElementsByName('offer')[0].value=temp;
+    }
+    function takename4(){
+    var temp=document.getElementsByClassName("title")[4].title;
+    document.getElementsByName('offer')[0].value=temp;
+    }
+    function takename5(){
+    var temp=document.getElementsByClassName("title")[5].title;
+    document.getElementsByName('offer')[0].value=temp;
+    }
+
+</script>
+<div class="row">
+
+ <div class="col-md-3 col-sm-6" onclick="takename0()">
+    <div class="serviceBox">
+        <div class="service-icon">
+            <i class="fa fa-globe"></i>
+        </div>
+    <div class="service-content">
+        <h3 class="title" id="11" title="ORION Express 650">ORION Express 650</h3>
+        <p class="description">
+            <b>СКОРОСТЬ:</b> 150 Мбит/с<br>
+            <b>СКОРОСТЬ НОЧЬЮ:</b> 150 Мбит/с<br><br>
+            <strong>
+                650
+                <i class="ruble">₽</i>
+            </strong>
+            <span>стоимость в месяц</span>
+        </p>
+    </div>
+    </div>
+ </div>
+
+ <div class="col-md-3 col-sm-6" onclick="takename1()">
+    <div class="serviceBox">
+        <div class="service-icon">
+            <i class="fa fa-globe"></i>
+        </div>
+        <div class="service-content">
+            <h3 class="title" title="ORION Express 800">ORION Express 800</h3>
+            <p class="description">
+                <b>СКОРОСТЬ:</b> 200 Мбит/с<br>
+                <b>СКОРОСТЬ НОЧЬЮ:</b> 200 Мбит/с<br><br>
+                <strong>
+                    800
+                    <i class="ruble">₽</i>
+                </strong>
+                <span>стоимость в месяц</span>
+            </p>
+        </div>
+    </div>
+ </div>
+
+ <div class="col-md-3 col-sm-6" onclick="takename2()">
+    <div class="serviceBox">
+        <div class="service-icon">
+            <i class="fa fa-globe"></i>
+        </div>
+        <div class="service-content">
+            <h3 class="title" title="ORION Express 1000">ORION Express 1000</h3>
+            <p class="description">
+                <b>СКОРОСТЬ:</b> 300 Мбит/с<br>
+                <b>СКОРОСТЬ НОЧЬЮ:</b> 300 Мбит/с<br><br>
+                <strong>
+                    1000
+                    <i class="ruble">₽</i>
+                </strong>
+                <span>стоимость в месяц</span>
+            </p>
+        </div>
+    </div>
+ </div>
+
+ <div class="col-md-3 col-sm-6" onclick="takename3()">
+    <div class="serviceBox">
+        <div class="service-icon">
+            <i class="fa fa-globe"></i>
+        </div>
+        <div class="service-content">
+            <h3 class="title" title="ORION Express 1200">ORION Express 1200</h3>
+            <p class="description">
+                <b>СКОРОСТЬ:</b> 500 Мбит/с<br>
+                <b>СКОРОСТЬ НОЧЬЮ:</b> 500 Мбит/с<br><br>
+                <strong>
+                    1200
+                    <i class="ruble">₽</i>
+                </strong>
+                <span>стоимость в месяц</span>
+            </p>
+        </div>
+    </div>
+ </div>
+</div><!-- ./row -->
+<br>
+<div class="row">
+    <div class="col-md-3 col-sm-6" onclick="takename4()">
+    <div class="serviceBox">
+        <div class="service-icon">
+            <i class="fa fa-globe"></i>
+        </div>
+        <div class="service-content">
+            <h3 class="title" title="Orion Union 830">Orion Union <br>830</h3>
+            <p class="description">
+                <b>СКОРОСТЬ:</b> 60 Мбит/с<br>
+                <b>СКОРОСТЬ НОЧЬЮ:</b> 100 Мбит/с<br><br>
+                <strong>
+                    830
+                    <i class="ruble">₽</i>
+                </strong>
+                <span>стоимость в месяц</span>
+            </p>
+        </div>
+    </div>
+ </div>
+
+    <div class="col-md-3 col-sm-6" onclick="takename5()">
+    <div class="serviceBox">
+        <div class="service-icon">
+            <i class="fa fa-globe"></i>
+        </div>
+        <div class="service-content">
+            <h3 class="title" title="Клиенту не подошёл не один тариф">Не подошёл не один тариф</h3>
+            <p class="description">
+                <br>
+                <br><br>
+                <strong>
+
+                </strong>
+                <span class="temp">стоимость в месяц</span>
+            </p>
+        </div>
+    </div>
+ </div>
+
+</div><!-- ./row -->
+<br>
+<form method="post">
+    <div class="row">
+        <div class="form-group">
+        <b><label for="reason">Выберите тариф, который подошёл клиенту</label></b>
+        </div>
+    </div>
+        <div class="form-group">
+            <select name="offer" class="form-control" value="{{ request.form['offer'] }}">
+                <option selected>Выберите...</option>
+                <option value="ORION Express 650">ORION Express 650</option>
+                <option value="ORION Express 800">ORION Express 800</option>
+                <option value="ORION Express 1000">ORION Express 1000</option>
+                <option value="ORION Express 1200">ORION Express 1200</option>
+                <option value="Orion Union 830">Orion Union 830</option>
+                <option value="Клиенту не подошёл не один тариф">Клиенту не подошёл не один тариф</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+
+        <button id="submit" class="btn btn-primary " role="button" aria-disabled="true" href="{{ url_for('information')}}">Отправить</button>
+    </div>
+
+</form>
+<br><br>
+{% endblock %}

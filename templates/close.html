@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-group">
+        <b><label for="reason_close">Причина завершения звонка</label></b>
+            <select name="reason_close" class="form-control" value="{{ request.form.get('reason_close') }}">
+                <option selected>Выберите...</option>
+                <option value="Подключить интернет">Подключить интернет</option>
+                <option value="Изменить тариф">Изменить тариф</option>
+                <option value="Проблема с интернетом">Проблема с интернетом</option>s
+                <option value="Узнать тарифы">Узнать тарифы</option>
+                <option value="Ошибся номером">Ошибся номером</option>
+            </select>
+    </div>
+
+<div class="form-row">
+    <b><label for="comment_close">Коментарий к звонку</label></b>
+    <textarea name="comment_close" placeholder="Коментарий к звонку" class="form-control">{{ request.form['comment_close'] }}</textarea>
+</div>
+<script>
+    function alert1(){
+    alert("Заявка отправлена супервайзеру");
+    }
+</script>
+<br><br>
+<div class="form-group">
+    <a class="btn btn-primary" role="button" href="{{ url_for('finish')}}" onclick="alert1()">Отправить супервайзеру</a>
+</div>
+{% endblock %}

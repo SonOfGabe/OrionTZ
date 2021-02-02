@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %}
+Заполниете информацию о звонящем
+{% endblock %}
+
+{% block content %}
+<style>
+    .form-group{
+    font-size: 1rem;
+    }
+</style>
+<h2 align="center">Заполните информацию о звонящем</h2><br>
+<form method="post">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b><label for="first_name">Имя</label></b>
+            <input type="text" name="first_name"
+                placeholder="Имя" class="form-control"
+                value="{{ request.form['first_name'] }}"></input>
+        </div>
+        <div class="form-group col-md-4">
+            <b><label for="last_name">Фамилия</label></b>
+            <input type="text" name="last_name"
+                placeholder="Фамилия" class="form-control"
+                value="{{ request.form['last_name'] }}"></input>
+        </div>
+
+        <div class="form-group col-md-4">
+            <b><label for="surname">Отчество</label></b>
+            <input type="text" name="surname"
+                placeholder="Отчество" class="form-control"
+                value="{{ request.form['surname'] }}"></input>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b><label for="city">Город</label></b>
+            <select  name="city" class="form-control" value="{{ request.form.get('city') }}">
+                <option selected>Выберите...</option>
+                <option value="Красноярск">Красноярск</option>
+                <option value="Иркутск">Иркутск</option>
+                <option value="Канск">Канск</option>s
+                <option value="Абакан">Абакан</option>
+                <option value="Братск">Братск</option>
+                <option value="Черногорск">Черногорск</option>
+                <option value="Минусинск">Минусинск</option>
+                <option value="Железногорск">Железногорск</option>
+                <option value="Зеленогорск">Зеленогорск</option>
+            </select>
+        </div>
+        <div class="form-group col-md-8">
+            <b><label for="address">Адрес</label></b>
+            <input type="text" name="address"
+                placeholder="Адрес" class="form-control"
+                value="{{ request.form['address'] }}"></input>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b><label for="phone1">Основной номер телефона</label></b>
+            <input type="text" name="phone1"
+                placeholder="Основной номер телефона" class="form-control"
+                value="{{ request.form['phone1'] }}"></input>
+        </div>
+        <div class="form-group col-md-6">
+            <b><label for="phone2">Дополнительный номер телефона</label></b>
+            <input type="text" name="phone2"
+                placeholder="Дополнитльный номер телефона" class="form-control"
+                value="{{ request.form['phone2'] }}"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b><label for="reason">Причина звонка</label></b>
+            <select name="reason" class="form-control" value="{{ request.form['reason'] }}">
+                <option selected>Выберите...</option>
+                <option value="Подключить интернет">Подключить интернет</option>
+                <option value="Изменить тариф">Изменить тариф</option>
+                <option value="Проблема с интернетом">Проблема с интернетом</option>s
+                <option value="Узнать тарифы">Узнать тарифы</option>
+                <option value="Ошибся номером">Ошибся номером</option>
+            </select>
+    </div>
+    <div class="form-row">
+
+            <b><label for="comment">Коментарий к звонку</label></b>
+            <textarea name="comment" placeholder="Коментарий к звонку"
+                  class="form-control">{{ request.form['comment'] }}</textarea>
+
+
+
+    </div>
+           <br> <button id="submit" class="btn btn-primary  btn-block" role="button" aria-disabled="true" href="{{ url_for('offers')}}">Отправить</button>
+    <br><br><br>
+
+
+
+
+
+
+</form>
+{% endblock %}

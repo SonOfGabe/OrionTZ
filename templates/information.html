@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .form-control{
+    border: none;
+    color: black;
+    }
+</style>
+
+<h2 align="center">Информация по заявке</h2>
+<div class="form-row">
+    <div class="form-control col-md-3">
+        <label><b>Фамилия: </b></label>
+        <span>{{ clients.last_name }}</span>
+    </div>
+    <div class="form-control col-md-3">
+        <label><b>Имя: </b></label>
+        <span>{{ clients.first_name }}</span>
+    </div>
+    <div class="form-control col-md-3">
+        <label><b>Отчество: </b></label>
+        <span>{{ clients.surname }}</span>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-control col-md-3">
+        <label><b>Город: </b></label>
+        <span>{{ clients.city }}</span>
+    </div>
+    <div class="form-control col-md-6">
+        <label><b>Адрес: </b></label>
+        <span>{{ clients.address }}</span>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-control col-md-5">
+        <label><b>Основной номер телефона: </b></label>
+        <span>{{ clients.phone1 }}</span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-control col-md-6">
+        <label><b>Дополнительный номер телефона: </b></label>
+        <span>{{ clients.phone2 }}</span>
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-control col-md-5">
+        <label><b>Причина звонка: </b></label>
+        <span>{{ clients.reason }}</span>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-control col-md-6">
+        <label><b>Коментарий от оператора: </b></label>
+        <span>{{ clients.comment  }}</span>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-control col-md-5">
+        <label><b>Выбраный клиентом тариф: </b></label>
+        <span>{{ offers.offer }}</span>
+    </div>
+</div>
+<script>
+    function alert1(){
+    alert("Заявка отправлена супервайзеру");
+    }
+</script>
+<br><br>
+<div class="form-group">
+    <a class="btn btn-primary" role="button" href="{{ url_for('finish')}}" onclick="alert1()">Отправить супервайзеру</a>
+</div>
+
+
+{% endblock %}
